@@ -7,6 +7,7 @@ $$\mathrm{VS}(K) = \exp(-\mathrm{tr}(K/n \log K/n)) = \exp(-\sum_{i=1}^n \lambda
 where $\lambda_i$ are the eigenvalues of $K/n$ and $0 \log 0 = 0$.
 That is, the Vendi Score is equal to the exponential of the von Neumann entropy of $K/n$, or the Shannon entropy of the eigenvalues, which is also known as the effective rank.
 
+For more information, please see our paper, [The Vendi Score: A Diversity Evaluation Metric for Machine Learning](https://arxiv.org/abs/2210.02410).
 
 ## Installation
 
@@ -108,3 +109,13 @@ print(f"N-grams: {ngram_vs:.02f}, BERT: {bert_vs:.02f}, SimCSE: {simcse_vs:.02f}
 ```
 
 More examples are illustrated in Jupyter notebooks in the `examples/` folder.
+
+## Citation
+```bibtex
+@article{friedman2022vendi,
+  title={The Vendi Score: A Diversity Evaluation Metric for Machine Learning},
+  author={Friedman, Dan and Dieng, Adji Bousso},
+  journal={arXiv preprint arXiv:2210.02410},
+  year={2022}
+}
+```
