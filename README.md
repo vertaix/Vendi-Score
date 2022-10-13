@@ -103,7 +103,7 @@ sents = ["Look, Jane.",
 ngram_vs = text_utils.ngram_vendi_score(sents, ns=[1, 2])
 bert_vs = text_utils.embedding_vendi_score(sents, model_path="bert-base-uncased")
 simcse_vs = text_utils.embedding_vendi_score(sents, model_path="princeton-nlp/unsup-simcse-bert-base-uncased")
-print(f"N-grams: {ngram_vs:.02f}, BERT: {bert_vs:.02f}, SimCSE: {simcse_vs:.02f})
+print(f"N-grams: {ngram_vs:.02f}, BERT: {bert_vs:.02f}, SimCSE: {simcse_vs:.02f}")
 
 # N-grams: 3.91, BERT: 1.21, SimCSE: 2.81
 ```
