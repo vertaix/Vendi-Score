@@ -4,7 +4,7 @@ import torch
 from torch import nn
 import torchvision
 from torchvision import transforms
-from torchvision.models import inception_v3
+from torchvision.models import inception_v3, Inception_V3_Weights
 import torchvision.transforms.functional as TF
 
 
@@ -61,8 +61,12 @@ def get_mnist(root, split="train", transform=None):
 
 
 def get_inception(pretrained=True, pool=True):
+    if pretrained:
+        weights = Inception_V3_Weights.DEFAULT
+    else:
+        weights = None
     model = inception_v3(
-        pretrained=pretrained, transform_input=True, init_weights=True
+        weights=weights, transform_input=True
     ).eval()
     if pool:
         model.fc = nn.Identity()
