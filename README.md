@@ -7,7 +7,7 @@ $$\mathrm{VS}(K) = \exp(-\mathrm{tr}(K/n \log K/n)) = \exp(-\sum_{i=1}^n \lambda
 where $\lambda_i$ are the eigenvalues of $K/n$ and $0 \log 0 = 0$.
 That is, the Vendi Score is equal to the exponential of the von Neumann entropy of $K/n$, or the Shannon entropy of the eigenvalues, which is also known as the effective rank.
 
-For more information, please see our paper, [The Vendi Score: A Diversity Evaluation Metric for Machine Learning](https://arxiv.org/abs/2210.02410).
+For more information, please see our paper, [The Vendi Score: A Diversity Evaluation Metric for Machine Learning](https://arxiv.org/abs/2210.02410) and our follow-up paper [Cousins of the Vendi Score: A Family of Similarity-Based Diversity Metrics For Science And Machine Learning](https://arxiv.org/abs/2310.12952).
 
 ## Installation
 
@@ -51,6 +51,12 @@ vendi.score_K(K)
 
 # 2.1573
 ```
+One can also compute Vendi Scores of different orders $q$. Large orders measure diversity with a greater emphasis on common elements. See our latest [pre-print](https://arxiv.org/abs/2310.12952) for more details on the behavior of the Vendi Score with different orders $q$.   
+
+```python
+vendi.score(samples, k, q=1.)
+```
+
 If your similarity function is a dot product between normalized
 embeddings $X\in\mathbb{R}^{n\times d}$, and $d < n$, it is faster
 to compute the Vendi score using the covariance matrix,
@@ -117,5 +123,14 @@ More examples are illustrated in Jupyter notebooks in the `examples/` folder.
   author={Friedman, Dan and Dieng, Adji Bousso},
   journal={arXiv preprint arXiv:2210.02410},
   year={2022}
+}
+```
+
+```bibtex
+@article{pasarkar2023cousins,
+      title={Cousins Of The Vendi Score: A Family Of Similarity-Based Diversity Metrics For Science And Machine Learning}, 
+      author={Pasarkar, Amey P and Dieng, Adji Bousso},
+      journal={arXiv preprint arXiv:2310.12952},
+      year={2023},
 }
 ```
