@@ -78,7 +78,7 @@ def intdiv_X(X, q=1, p=None, normalize=True):
     return intdiv(K, q=q, p=p)
 
 
-def intdiv(elems, k, q=1, p=None):
+def intdiv(samples, k, q=1, p=None):
     n = len(samples)
     K = np.zeros((n, n))
     for i in range(n):
