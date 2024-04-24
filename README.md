@@ -7,7 +7,9 @@ $$\mathrm{VS}(K) = \exp(-\mathrm{tr}(K/n \log K/n)) = \exp(-\sum_{i=1}^n \lambda
 where $\lambda_i$ are the eigenvalues of $K/n$ and $0 \log 0 = 0$.
 That is, the Vendi Score is equal to the exponential of the von Neumann entropy of $K/n$, or the Shannon entropy of the eigenvalues, which is also known as the effective rank.
 
-![](diversity.gif)
+<p align="center">
+<img src="diversity.gif" alt="diversity" width="60%"/>
+</p>
 
 <p align="center">
 <em>The Vendi Score provides an accurate and interpretable measure of diversity</em>
