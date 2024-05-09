@@ -111,7 +111,10 @@ def get_embeddings(
                 output = output.last_hidden_state[:, 0]
         if type(output) == list:
             output = output[0]
-        embeddings.append(output.squeeze().cpu().numpy())
+        output_arr = output.squeeze().cpu().numpy()
+        if output_arr.ndim==1:
+            output_arr = output_arr.reshape(1, output_arr.size)
+        embeddings.append(output_arr)
     return np.concatenate(embeddings, 0)
 
 
