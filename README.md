@@ -126,19 +126,22 @@ More examples are illustrated in Jupyter notebooks in the `examples/` folder.
 
 ## Citation
 ```bibtex
-@article{friedman2022vendi,
+@article{friedman2023vendi,
   title={The Vendi Score: A Diversity Evaluation Metric for Machine Learning},
   author={Friedman, Dan and Dieng, Adji Bousso},
-  journal={arXiv preprint arXiv:2210.02410},
-  year={2022}
+  journal={Transactions on Machine Learning Research},
+  issn={2835-8856},
+  year={2023}
 }
 ```
 
 ```bibtex
-@article{pasarkar2023cousins,
-      title={Cousins Of The Vendi Score: A Family Of Similarity-Based Diversity Metrics For Science And Machine Learning}, 
-      author={Pasarkar, Amey P and Dieng, Adji Bousso},
-      journal={arXiv preprint arXiv:2310.12952},
-      year={2023},
+@inproceedings{pasarkar2024cousins,
+  title={Cousins Of The Vendi Score: A Family Of Similarity-Based Diversity Metrics For Science And Machine Learning},
+  author={Pasarkar, Amey P and Dieng, Adji Bousso},
+  booktitle={International Conference on Artificial Intelligence and Statistics},
+  pages={3808--3816},
+  year={2024},
+  organization={PMLR}
 }
 ```
