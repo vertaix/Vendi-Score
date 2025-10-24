@@ -65,9 +65,7 @@ def get_inception(pretrained=True, pool=True):
         weights = Inception_V3_Weights.DEFAULT
     else:
         weights = None
-    model = inception_v3(
-        weights=weights, transform_input=True
-    ).eval()
+    model = inception_v3(weights=weights, transform_input=True).eval()
     if pool:
         model.fc = nn.Identity()
     return model
@@ -107,13 +105,13 @@ def get_embeddings(
         if type(output) == list:
             output = output[0]
         output_arr = output.squeeze().cpu().numpy()
-        if output_arr.ndim==1:
+        if output_arr.ndim == 1:
             output_arr = output_arr.reshape(1, output_arr.size)
         embeddings.append(output_arr)
     return np.concatenate(embeddings, 0)
 
 
-def get_pixel_vectors(images, resize=32):
+def get_pixel_vectors(images, resize):
     if resize:
         images = [img.resize((resize, resize)) for img in images]
     return np.stack([np.array(img).flatten() for img in images], 0)
@@ -134,7 +132,7 @@ def get_inception_embeddings(images, batch_size=64, device="cpu"):
 
 
 def pixel_vendi_score(images, resize=32):
-    X = get_pixel_vectors(images)
+    X = get_pixel_vectors(images, resize)
     n, d = X.shape
     if n < d:
         return vendi.score_X(X)
